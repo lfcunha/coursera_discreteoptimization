@@ -57,7 +57,7 @@
       <file leaf-file-name="solver_DP.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solver_DP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="0" selection-start="5141" selection-end="5735" vertical-scroll-proportion="0.02097902" vertical-offset="3045" max-vertical-offset="3765">
+            <state line="85" column="0" selection-start="1982" selection-end="1982" vertical-scroll-proportion="0.5174825" vertical-offset="905" max-vertical-offset="1620">
               <folding>
                 <element signature="e#43#77#0" expanded="true" />
               </folding>
@@ -80,10 +80,10 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/branchandbound.py" />
         <option value="$PROJECT_DIR$/knapsackDP.py" />
-        <option value="$PROJECT_DIR$/solver_DP.py" />
         <option value="$PROJECT_DIR$/bound.py" />
         <option value="$PROJECT_DIR$/solver.py" />
         <option value="$PROJECT_DIR$/solver_BB.py" />
+        <option value="$PROJECT_DIR$/solver_DP.py" />
       </list>
     </option>
   </component>
@@ -645,7 +645,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/solver_DP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="0" selection-start="5141" selection-end="5735" vertical-scroll-proportion="0.02097902" vertical-offset="3045" max-vertical-offset="3765">
+        <state line="85" column="0" selection-start="1982" selection-end="1982" vertical-scroll-proportion="0.5174825" vertical-offset="905" max-vertical-offset="1620">
           <folding>
             <element signature="e#43#77#0" expanded="true" />
           </folding>
