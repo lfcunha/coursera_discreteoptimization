@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://class.coursera.org/optimization-002/wiki/tools -->
+<html xmlns:fb="http://ogp.me/ns/fb#" itemtype="http://schema.org" class="supports-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE7"><meta name="fragment" content="!"><meta name="robots" content="NOODP"><meta charset="utf-8"><meta property="og:title" content="Coursera"><meta property="og:type" content="website"><meta property="og:image" content="http://s3.amazonaws.com/coursera/media/Coursera_Computer_Narrow.png"><meta property="og:url" content="/wiki/tools"><meta property="og:site_name" content="Coursera"><meta property="og:locale" content="en_US"><meta property="og:description" content="Take free online classes from 80+ top universities and organizations. Coursera is a social entrepreneurship company partnering with Stanford University, Yale University, Princeton University and others around the world to offer courses online for anyone to take, for free. We believe in connecting people to a great education so that anyone around the world can learn without limits."><meta property="fb:admins" content="727836538,4807654"><meta property="fb:app_id" content="274998519252278"><meta name="description" content="Take free online classes from 80+ top universities and organizations. Coursera is a social entrepreneurship company partnering with Stanford University, Yale University, Princeton University and others around the world to offer courses online for anyone to take, for free. We believe in connecting people to a great education so that anyone around the world can learn without limits."><meta name="image" content="http://s3.amazonaws.com/coursera/media/Coursera_Computer_Narrow.png"><meta name="apple-itunes-app" content="app-id=736535961"><title>Wiki - Optimization Tools | Coursera</title>    <link href="./Wiki - Optimization Tools   Coursera_files/spark.main.css" rel="stylesheet" type="text/css">
+      <link href="./Wiki - Optimization Tools   Coursera_files/course.css" rel="stylesheet" type="text/css">
+    <link href="https://spark-public.s3.amazonaws.com/optimization/static/images/favicon.ico" rel="icon">
+<script type="text/javascript" async="" src="./Wiki - Optimization Tools   Coursera_files/ga.js"></script><script type="text/javascript" src="./Wiki - Optimization Tools   Coursera_files/MathJax.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/routes" src="./Wiki - Optimization Tools   Coursera_files/routes.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="204js" data-requiremodule="_204" src="./Wiki - Optimization Tools   Coursera_files/204.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/student-page" src="./Wiki - Optimization Tools   Coursera_files/student-page.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/student-page.html" src="./Wiki - Optimization Tools   Coursera_files/student-page.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/header" src="./Wiki - Optimization Tools   Coursera_files/header.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/sidebar" src="./Wiki - Optimization Tools   Coursera_files/sidebar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/header.html" src="./Wiki - Optimization Tools   Coursera_files/header.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/sidebar.html" src="./Wiki - Optimization Tools   Coursera_files/sidebar.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/signature_track" src="./Wiki - Optimization Tools   Coursera_files/signature_track.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/signatureTrackLastChanceModal.html" src="./Wiki - Optimization Tools   Coursera_files/signatureTrackLastChanceModal.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/flexjoinLastChanceModal.html" src="./Wiki - Optimization Tools   Coursera_files/flexjoinLastChanceModal.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="js/lib/util" src="./Wiki - Optimization Tools   Coursera_files/util.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/nls/header" src="./Wiki - Optimization Tools   Coursera_files/header(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/nls/sidebar" src="./Wiki - Optimization Tools   Coursera_files/sidebar(1).js"></script><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -5px 0 0 0; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head><body><div id="MathJax_Message" style="display: none;"></div><div id="fb-root"></div><div id="spark-help" class="hide"></div><a href="http://help.coursera.org/customer/widget/emails/new" target="_blank"><div style="z-index: 1" data-networkprioritysupportwidget="" role="button" class="helpwidget-tab hide">Premium Support</div></a><div id="origami"><div><div><div class="coursera-page"><div role="menubar" class="coursera-header"><div class="hidden">This page features MathJax technology to render mathematical formulae.
+If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.</div><h1 class="hidden">Discrete Optimization</h1><div role="banner" class="course-topbar container-fluid"><div class="row-fluid"><div class="span3"><a href="https://www.coursera.org/" data-if-linkable="add-referrer" class="course-topbar-logo"></a></div><div style="float:right;" class="course-topbar-nav-container span9"><h2 class="hidden">Top Navigation Bar</h2><ul class="course-topbar-nav-list"><li class="course-topbar-nav-list-item"><a href="https://www.coursera.org/courses" data-if-linkable="add-referrer">Courses</a></li><li tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my" data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close="data-popup-close" style="cursor:pointer;" data-popup-direction="se" class="course-topbar-nav-list-item"><a data-user-id="440046">Luis Cunha<i class="icon-caret-down"></i></a></li></ul></div></div><div id="course-topbar-aboutus" class="course-topbar-sublist"><a href="https://www.coursera.org//about/" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">About Us</a><a href="https://www.coursera.org//about/careers" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">Careers</a><a href="https://www.coursera.org//about/people" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">People</a><a href="https://www.coursera.org//about/contact" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">Contact Us</a></div><div id="course-topbar-my" class="course-topbar-sublist"><a data-popup-close="data-popup-close" href="https://www.coursera.org/" target="_new" class="course-topbar-sublist-item">My Courses</a><a data-popup-close="data-popup-close" href="https://www.coursera.org/account/profile" target="_new" class="course-topbar-sublist-item">Profile</a><a data-popup-close="data-popup-close" href="https://www.coursera.org/account/records" target="_new" class="course-topbar-sublist-item">Course Records</a><a href="https://www.coursera.org/account/settings" target="_new" class="course-topbar-sublist-item">Settings</a><a href="https://class.coursera.org/optimization-002/class/preferences" class="course-topbar-sublist-item">Course Preferences</a><a href="https://class.coursera.org/optimization-002/auth/logout" class="course-topbar-sublist-item">Sign Out</a></div></div><div class="course-topbanner-wrapper"><div class="course-topbanner"><div class="course-topbanner-university-logo"><a href="https://www.coursera.org/unimelb" target="_blank" data-if-linkable="add-referrer" title="https://www.coursera.org/unimelb" class="coursera-university-color"><img src="./Wiki - Optimization Tools   Coursera_files/university_logo" alt="unimelb"></a></div><h1 class="course-topbanner-header"><a href="https://class.coursera.org/optimization-002/" data-if-linkable="modal-lock" class="course-topbanner-name coursera-university-color">Discrete Optimization</a><br><span style="" class="course-topbanner-instructor">by Professor Pascal Van Hentenryck</span></h1></div></div></div><div style="position:relative;" class="container-fluid"><div class="row-fluid"><div id="course-page-sidebar" role="navigation"><div role="menubar" class="coursera-sidebar"><div id="course-page-sidebar" role="navigation"><div class="course-navbar-container"><a href="https://class.coursera.org/optimization-002" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_index"><img src="./Wiki - Optimization Tools   Coursera_files/logo" style="width: 205px;height: 116px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);" alt="Course Home Page"></a><div data-coursera-course-search-nav-widget="data-coursera-course-search-nav-widget" class="input-append course-search-nav-box"><form method="get" action="https://class.coursera.org/optimization-002/class/search" data-js-search-form="data-js-search-form" class="form-inline minimized-search"><label for="course-search-nav-input" class="accessible-text-for-reader">Search this course</label><input id="course-search-nav-input" type="text" name="q" data-js-search-input="data-js-search-input">&nbsp;<button type="submit" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="search" class="btn icon-search"><span class="accessible-text-for-reader">Search</span></button></form></div><h2 class="hidden">Side Navigation Bar</h2><ul class="course-navbar-list"><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/class/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Announcements" class="coursera-university-color"><span>Announcements </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/syllabus" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Syllabus" class="coursera-university-color"><span>Syllabus </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/lecture/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Video_Lectures" class="coursera-university-color"><span>Video Lectures </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/forum/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Discussion_Forums" class="coursera-university-color"><span>Discussion Forums </span><span></span></a></li><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>ASSESSMENTS</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/assignment/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Programming_Assignments" class="coursera-university-color"><span>Programming Assignments </span><span></span></a></li><li class="course-navbar-item"><a href="http://dopt.s3-website-us-east-1.amazonaws.com/002/" target="_blank" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Leader_Boards" class="coursera-university-color"><span>Leader Boards </span><span class="icon-share"></span><span class="accessible-text-for-reader">opens in new browser tab</span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/grades" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Grades" class="coursera-university-color"><span>Grades </span><span></span></a></li><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>LABORATORY</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/labs" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_What_is_this?" class="coursera-university-color"><span>What is this? </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/setcover" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Set_Cover_Assignment" class="coursera-university-color"><span>Set Cover Assignment </span><span></span></a></li><li class="course-navbar-item"><a href="http://dopt.s3-website-us-east-1.amazonaws.com/002/set_cover.html" target="_blank" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Set_Cover_Leader_Board" class="coursera-university-color"><span>Set Cover Leader Board </span><span class="icon-share"></span><span class="accessible-text-for-reader">opens in new browser tab</span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/viz" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Assignment_Visualization" class="coursera-university-color"><span>Assignment Visualization </span><span></span></a></li><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>RESOURCES</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/social" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Socialize" class="coursera-university-color"><span>Socialize </span><span></span></a></li><li class="course-navbar-item active"><a href="./Wiki - Optimization Tools   Coursera_files/Wiki - Optimization Tools   Coursera.html" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Optimization_Tools" class="coursera-university-color"><span>Optimization Tools </span><span></span><span class="course-navbar-selected-marker">(selected)</span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/materials" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Additional_Materials" class="coursera-university-color"><span>Additional Materials </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/community" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Community" class="coursera-university-color"><span>Community </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/wiki/aboutus" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_About_Us" class="coursera-university-color"><span>About Us </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/optimization-002/quiz/index?quiz_type=survey" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Surveys_" class="coursera-university-color"><span>Surveys  </span><span></span></a></li><li class="course-navbar-item"><a href="http://www.meetup.com/Coursera/" target="_blank" class="coursera-university-color">Join a Meetup<span class="icon-share"></span><span class="accessible-text-for-reader">opens in new browser tab</span></a></li></ul><ul style="list-style-type:none;margin-left: 10px;"><li><a href="http://help.coursera.org/" target="_blank" title="Open help articles in new window" class="coursera-university-color"><i class="icon-question-sign"></i>Help Articles</a></li></ul><ul style="list-style-type:none;margin-left: 10px;"><li><a href="https://class.coursera.org/optimization-002/forum/list?forum_id=10000&url=https%3A%2F%2Fclass.coursera.org%2Foptimization-002%2Fwiki%2Ftools" class="coursera-university-color"><i class="icon-comments"></i>Course Materials Errors</a></li><li><a href="https://class.coursera.org/optimization-002/forum/list?forum_id=10001&url=https%3A%2F%2Fclass.coursera.org%2Foptimization-002%2Fwiki%2Ftools" class="coursera-university-color"><i class="icon-comments"></i>Technical Issues</a></li></ul></div></div></div></div><div id="course-page-content" role="main"><div id="spark" class="hide" style="display: block;">
+<h2 class="course-page-header">
+    Optimization Tools    <a class="coursera-reporter-link" title="Click here if you&#39;re experiencing technical problems or found errors in the course materials." target="_blank" href="https://class.coursera.org/optimization-002/help/pages?url=https%3A%2F%2Fclass.coursera.org%2Foptimization-002%2Fwiki%2Ftools">
+      Help
+    </a>
+    <a data-coursera-admin-helpwidget-link="" rel="help" href="https://class.coursera.org/mooc/help/pages/setup" title="Course Page Setup" style="display:none;">Learn more.</a>
+</h2>
+
+
+<p>Many general purpose optimization tools have been developed for solving
+    optimization problems in practice. These are typically called "solvers".
+    This page includes pointers to solvers that are acceptable to use in the
+    assessments of this course. They are organized by their underling solving
+    technology. Some solvers are commercial products and may only be available
+    after purchasing a license or acquiring an academic license via another
+    institution.</p>
+<p>It is important to note that these are general purpose optimization tools.
+    They are not tailored to a specific problem. You cannot use solvers that
+    are dedicated to solving a specific problem as this would violate the course
+    guidelines on code sharing.</p>
+<p>No particular solvers are officially suggested or supported by the course.
+    However, we encourage you to help your fellow students in resolving technical
+    issues relating to the use of specific solvers.</p>
+<p>Lastly, generic optimization tools are fantastic for rapid prototyping
+    of different optimization ideas and models. However, it will always be
+    difficult for a general tool to outperform an algorithm that is dedicated
+    to a particular problem. It is possible to get full credit in this course
+    using generic solvers.  However, the highest quality solutions, like those found at the top of the leader board, often come
+    from hand-crafted dedicated solvers.</p>
+
+<h3>Constraint Programming Solvers</h3>
+
+<ul>
+<li>
+<a href="http://www.emn.fr/z-info/choco-solver/">CHOCO</a> - java library,
+        open source</li>
+    <li>
+<a href="http://www.gecode.org/download.html">Gecode</a> - c++, free</li>
+    <li>
+<a href="http://www-01.ibm.com/software/websphere/ilog/">ILog</a> - binary,
+        free with academic license</li>
+    <li>
+<a href="http://jacop.osolpro.com/">JACOP</a> - java ,
+        open source</li>
+    <li>
+<a href="http://www.minizinc.org/">MiniZinc / G12</a> - binary, free for students</li>
+    <li>
+<a href="https://code.google.com/p/or-tools/">or-tools</a> - C++ ,
+        open source, APIs - Java, Python, and .NET</li>
+</ul>
+<h3>Mixed Integer Programming Solvers</h3>
+
+<ul>
+<li>
+<a href="http://www.coin-or.org/projects/Bcp.xml">BCP</a> - c++, open source</li>
+    <li>
+<a href="http://www.coin-or.org/projects/Cbc.xml">CBC</a> - c++, open source</li>
+    <li>
+<a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPlex</a> -
+        binary, free with academic license</li>
+    <li>
+<a href="http://www.gnu.org/software/glpk/">GLPK</a> - c, open source</li>
+    <li>
+<a href="http://www.gurobi.com/">gurobi</a> - binary, free with academic
+        license</li>
+    <li>
+<a href="http://sourceforge.net/projects/lpsolve/">LPSolve</a> - c, open
+        source</li>
+    <li>
+<a href="http://scip.zib.de/">SCIP</a> - binary, free for academic use</li>
+</ul>
+<h3>Linear Programming Solvers</h3>
+
+<ul>
+<li>
+<a href="http://www.coin-or.org/projects/Clp.xml">CLP</a> - c++, open source</li>
+    <li>
+<a href="http://google-opensource.blogspot.com.au/2009/06/introducing-apache-commons-math.html">SimplexSolver</a> -
+        java, open source</li>
+</ul>
+<h3>Local Search Solvers</h3>
+
+<ul>
+<li>
+<a href="http://www.localsolver.com/">Local Solver</a> - binary, free with academic
+        license</li>
+   <li>
+<a href="http://www.optaplanner.org/">OptaPlanner </a> - java, open source </li> 
+</ul>
+<h3>SAT Solvers</h3>
+
+<ul>
+<li>
+<a href="https://github.com/msoos/cryptominisat">cryptominisat</a> - c++,
+        open source</li>
+    <li>
+<a href="https://www.lri.fr/~simon/?page=glucose">Glucose</a> - c, open
+        source</li>
+    <li>
+<a href="http://fmv.jku.at/lingeling/">Lingeling</a> - c, open source</li>
+    <li>
+<a href="http://minisat.se/">MiniSat</a> - binary, free</li>
+    <li>
+<a href="http://ubcsat.dtompkins.com/">UBCSAT</a> - c, open source</li>
+</ul>
+<h3>Hybrid Solvers</h3>
+
+<ul>
+<li>
+<a href="http://scip.zib.de/">SCIP</a> - binary, free for academic use</li>
+</ul>
+<hr>
+<div>
+    <div style="float:left">
+    	    	    </div>
+    <div style="float:right;text-align:right;font-size:10px;">
+    	Created Mon 13 May 2013  7:05 PM PDT<br>
+    	Last Modified Tue  4 Mar 2014  6:54 PM PST    </div>
+</div>
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  
+  styleSheets: [],
+  styles: {},
+
+  jax: ["input/TeX"],
+  
+  extensions: ["tex2jax.js"],
+
+  preJax: null,
+  postJax: null,
+
+  preRemoveClass: "MathJax_Preview",
+
+  showProcessingMessages: true,
+
+  messageStyle: "none",
+  
+  displayAlign: "center",
+  displayIndent: "0em",
+  
+  delayStartupUntil: "none",
+
+  skipStartupTypeset: false,
+  
+  elements: [],
+  
+  tex2jax: {
+	    inlineMath: [
+	                 ['$$','$$'],      // uncomment this for standard TeX math delimiters
+	                 ['\\(','\\)']
+	                 ],
+
+	                 displayMath: [
+	                 ['\\[','\\]']
+	                 ],
+
+    skipTags: ["script","noscript","style","textarea","pre","code"],
+    ignoreClass: "tex2jax_ignore",
+    processClass: "tex2jax_process",
+    processEscapes: false,
+    processEnvironments: true,
+    preview: "TeX"
+    
+  },
+  
+  mml2jax: {
+    preview: "alttext"
+    
+  },
+  
+  jsMath2jax: {
+    preview: "TeX"
+    
+  },
+
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    Macros: {},
+
+    extensions: ["AMSmath.js", "AMSsymbols.js"]
+    
+  },
+
+  //============================================================================
+  //
+  //  These parameters control the MathML inupt jax.
+  //
+  MathML: {
+    //
+    //  This specifies whether to use TeX spacing or MathML spacing when the
+    //  HTML-CSS output jax is used.
+    //
+    useMathMLspacing: false
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the HTML-CSS output jax.
+  //
+  "HTML-CSS": {
+    
+    scale: 100,
+    
+    availableFonts: ["STIX","TeX"],
+    
+    preferredFont: "TeX",
+    
+    webFont: "TeX",
+    
+    imageFont: "TeX",
+    
+    undefinedFamily: "STIXGeneral,'Arial Unicode MS',serif",
+      
+    showMathMenu: true,
+
+    styles: {},
+    
+    tooltip: {
+      delayPost: 600,          // milliseconds delay before tooltip is posted after mouseover
+      delayClear: 600,         // milliseconds delay before tooltip is cleared after mouseout
+      offsetX: 10, offsetY: 5  // pixels to offset tooltip from mouse position
+    }
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the NativeMML output jax.
+  //
+  NativeMML: {
+
+    scale: 100,
+
+    showMathMenu: true,
+    showMathMenuMSIE: true,
+
+    styles: {}
+  },
+  
+  MathMenu: {
+    delay: 400,
+    
+    helpURL: "http://www.mathjax.org/help/user/",
+
+    showRenderer: true,
+    showFontMenu: false,
+    showContext:  false,
+
+    windowSettings: {
+      status: "no", toolbar: "no", locationbar: "no", menubar: "no",
+      directories: "no", personalbar: "no", resizable: "yes", scrollbars: "yes",
+      width: 100, height: 50
+    },
+    
+    styles: {}
+    
+  },
+
+  MMLorHTML: {
+    prefer: {
+      MSIE:    "MML",
+      Firefox: "HTML",
+      Opera:   "HTML",
+      other:   "HTML"
+    }
+  }
+});
+</script>
+</div></div></div></div></div><div class="coursera-footer"></div></div></div></div><!--[if gte IE 8]><script>document.getElementById("coursera-loading-js").style.display = 'block';</script><![endif]-->
+<!--[if lte IE 7]><script>document.getElementById("coursera-loading-nojs").style.display = 'block';
+window._204 = window._204 || [];
+window._gaq = window._gaq || [];
+
+window._gaq.push(
+    ['_setAccount', 'UA-28377374-1'],
+    ['_setDomainName', window.location.hostname],
+    ['_setAllowLinker', true],
+    ['_trackPageview', window.location.pathname]);
+    
+window._204.push(
+  ['client', 'home'],
+  {key:"pageview", value:window.location.pathname});
+  </script><script src="https://eventing.coursera.org/204.min.js"></script><script src="https://ssl.google-analytics.com/ga.js"></script><![endif]-->
+<!--[if !IE]> --><script>document.getElementById("coursera-loading-js").style.display = 'block';</script><!-- <![endif]-->
+    <script src="./Wiki - Optimization Tools   Coursera_files/jquery.js"></script>
+      <script src="./Wiki - Optimization Tools   Coursera_files/loadOrRefreshMathJax.js"></script>
+      <script src="./Wiki - Optimization Tools   Coursera_files/textbook_wiki.js"></script>
+  <script src="./Wiki - Optimization Tools   Coursera_files/require.js"></script><script data-baseurl="https://d2wvvaown1ul17.cloudfront.net/site-static/8e8a6be11b28cab69daa658c49ae2fc80f08af04/" data-version="8e8a6be11b28cab69daa658c49ae2fc80f08af04" data-timestamp="1399679307522" data-debug="0" data-locale="en_US" id="_require">if(document.getElementById("coursera-loading-js").style.display == 'block') {
+  (function(el) {
+     require.config({
+       //enforceDefine: true,
+       waitSeconds: 75,
+       baseUrl: el.getAttribute("data-baseurl"),
+       urlArgs: el.getAttribute("data-debug") == "1" ? "v=" + el.getAttribute("data-timestamp") : "",
+       shim: {
+          'underscore': {
+             exports: '_'
+          },
+          'backbone': {
+             deps: ['underscore', 'jquery'],
+             exports: 'Backbone',
+             init: function(_, $) {
+               Backbone.$ = $;
+               return Backbone;
+             }
+          },
+          'pages/hg/thirdparty/js/backbone.marionette': {
+            deps: ["backbone"]
+          },
+          'pages/hg/thirdparty/js/webshims/polyfiller': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/webshims/extras/mousepress': {
+            deps: ["jquery", "pages/hg/thirdparty/js/webshims/polyfiller"]
+          },
+          'pages/hg/thirdparty/js/jquery.throttle': {
+            deps: ["jquery"]
+          },
+          'js/lib/jquery.linkify': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/js/bootstrap/alert': {
+            deps: ["jquery", "pages/hg/thirdparty/js/bootstrap/transition"]
+          },
+          'spark/core/js/jquery_ui': {
+            deps: ["jquery"]
+          },
+          'spark/core/js/jquery.history': {
+            deps: ["jquery"]
+          },
+          'js/lib/bootstrap.tooltip': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/bootstrap/transition': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/bootstrap/tab': {
+            deps: ["jquery"]
+          },
+          'bundles/videojs/lib/video.4.3.0': {
+            exports: 'vjs'
+          }
+       },
+       paths: {
+          "jquery":                         "pages/spark/jquery",
+          "underscore":                     "js/core/underscore.1.5.2",
+          "backbone":                       "js/core/backbone.1.1.0",
+          "backbone.relational":            "js/lib/backbone.relational.0.8.6",
+          "i18n":                           "js/core/i18n._t",
+          "pages/spark/models/user.json":   "empty:",
+          "pages/spark/models/course.json": "empty:",
+          "pages/spark/models/navbar.json": "empty:"
+       },
+       callback: function() {
+                    require(["pages/spark/routes"]);
+                },
+       config: {
+         i18n: {
+           locale: (window.localStorage ? localStorage.getItem('locale') : '') || el.getAttribute('data-locale')
+         }
+       }
+     });
+  })(document.getElementById("_require"));
+}
+</script><script>define("pages/spark/models/user.json", [], function(){
+      return JSON.parse("{\"id\":440046,\"email_address\":\"lfcunha@gmail.com\",\"full_name\":\"Luis Cunha\",\"locale\":\"en_US\",\"timezone\":\"America\\\/Los_Angeles\",\"access_group_id\":\"4\",\"registration_time\":\"1385696575\",\"last_access_time\":\"1399760529\",\"last_access_ip\":\"142.255.76.143\",\"signature_track_register_time\":\"0\",\"email_announcement\":\"1\",\"email_forum\":\"1\",\"in_signature_track\":\"0\",\"wishes_proctored_exam\":null,\"first_name\":\"Luis\",\"permissions\":[\"default\",\"allow_site_access\"],\"group\":\"Student\",\"anonymous\":false,\"forum_title\":\"Student\",\"signature_track_state\":1,\"verified_quizzes\":[],\"submitted_quizzes\":[\"-2\",\"-1\"],\"scheduled_proctored_exam\":null,\"last_chance_modal\":null}");
+  });
+define("pages/spark/models/course.json", [], function(){
+      return JSON.parse("{\"id\":971470,\"isPrivate\":false,\"type\":\"public\",\"name\":\"Discrete Optimization\",\"instructor\":\"Professor Pascal Van Hentenryck\",\"sessionName\":\"optimization-002\",\"externalBaseURL\":\"https:\\\/\\\/www.coursera.org\\\/\",\"shortname\":\"optimization\",\"host\":\"https:\\\/\\\/www.coursera.org\\\/\",\"assetUnversionedLink\":\"https:\\\/\\\/dt5zaw6a98blc.cloudfront.net\\\/site-static\\\/\",\"cheggID\":\"\",\"hasLTI\":true,\"badgevilleDomain\":\"\",\"linkable\":false,\"universityShortname\":\"unimelb\",\"signatureTrackStatus\":{\"signature_track_enabled\":0},\"courseURLs\":{\"log_in_link\":\"https:\\\/\\\/accounts.coursera.org\\\/signin?post_redirect=https%3A%2F%2Faccounts.coursera.org%2Fsignin%3Fuser_action%3Dclass%26course_id%3D971470%26post_redirect%3Dhttps%253A%252F%252Fclass.coursera.org%252Foptimization-002%252Fauth%252Fauth_redirector%253Ftype%253Dlogin%2526subtype%253Dnormal%2526visiting%253D\",\"sign_up_link\":\"https:\\\/\\\/accounts.coursera.org\\\/signup?enroll_cid=971470&enroll_sn=optimization&enroll_n=Discrete Optimization\",\"view_course_info_link\":\"https:\\\/\\\/www.coursera.org\\\/course\\\/optimization\",\"sign_up_link_cant_enroll\":\"https:\\\/\\\/accounts.coursera.org\\\/signup?post_redirect=https%3A%2F%2Fwww.coursera.org%2Fcourse%2Foptimization\"},\"courseBase\":\"https:\\\/\\\/class.coursera.org\\\/optimization-002\\\/\",\"search\":true,\"hideWiki\":true,\"hideMeetup\":false,\"aceStartRegistrationDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceEndRegistrationDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamStartDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamEndDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamRules\":\"\",\"aceExamDuration\":\"\",\"aceBeforeExam\":false,\"aceAfterExam\":true,\"aceHours\":null,\"aceCreditType\":\"\",\"acePrice\":null,\"aceExamID\":null,\"aceEligible\":false,\"canRegisterForACE\":false,\"specialization\":null,\"supportForums\":true,\"textbooks\":\"\",\"inVideoQuizV2\":true,\"in_flexjoin\":null,\"honorCodeExtraText\":\"\",\"honorCodeCustomTitle\":\"\",\"honorCodeCustomButton\":\"\"}");
+  });
+define("pages/spark/models/navbar.json", [], function(){
+      return JSON.parse("{\"items\":[{\"name\":\"Announcements\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"class:index\"},{\"name\":\"Syllabus\",\"icon\":\"wiki\",\"link_type\":\"wiki\",\"link_data\":\"syllabus\"},{\"name\":\"Video Lectures\",\"icon\":\"lecture\",\"link_type\":\"circuit\",\"link_data\":\"lecture:index\"},{\"name\":\"Discussion Forums\",\"icon\":\"forum\",\"link_type\":\"circuit\",\"link_data\":\"forum:index\"},{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"ASSESSMENTS\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"Programming Assignments\",\"icon\":\"assignment\",\"link_type\":\"circuit\",\"link_data\":\"assignment:index\"},{\"name\":\"Leader Boards\",\"icon\":\"\",\"link_type\":\"window_link\",\"link_data\":\"http:\\\/\\\/dopt.s3-website-us-east-1.amazonaws.com\\\/002\\\/\"},{\"name\":\"Grades\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"grades\"},{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"LABORATORY\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"What is this?\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"labs\"},{\"name\":\"Set Cover Assignment\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"setcover\"},{\"name\":\"Set Cover Leader Board\",\"icon\":\"\",\"link_type\":\"window_link\",\"link_data\":\"http:\\\/\\\/dopt.s3-website-us-east-1.amazonaws.com\\\/002\\\/set_cover.html\"},{\"name\":\"Assignment Visualization\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"viz\"},{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"RESOURCES\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"Socialize\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"social\"},{\"name\":\"Optimization Tools\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"tools\"},{\"name\":\"Additional Materials\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"materials\"},{\"name\":\"Community\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"community\"},{\"name\":\"About Us\",\"icon\":\"wiki\",\"link_type\":\"wiki\",\"link_data\":\"aboutus\"},{\"name\":\"Surveys \",\"icon\":\"quiz\",\"link_type\":\"circuit\",\"link_data\":\"quiz:index?quiz_type=survey\"}]}");
+  });
+</script><div class="hide confirm-navigation modal"><div class="modal-header"><h3>Confirm Navigation</h3></div><div class="modal-body"><div class="confirm-navigation-message"></div><div>Are you sure you want to leave this page?</div></div><div class="modal-footer"><button data-modal-close="data-modal-close" class="btn confirm-navigation-stay">Stay on this Page</button><button data-modal-close="data-modal-close" class="btn btn-danger confirm-navigation-leave">Leave this Page</button></div></div><div class="coursera-async-message" style="display: none;"></div></body></html>
